@@ -29,8 +29,13 @@ public class Movement : MonoBehaviour
 		}
 	}
 	void Update()
-	{		
-		if (Input.GetMouseButton(0))
+	{
+        if (Input.GetKeyDown(KeyCode.Space))
+			{
+			playerAnim.Play("Jump");
+		    }
+       
+        if (Input.GetMouseButton(0))
         {
 			playerAnim.Play("SwordSlash");
         }
