@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 767318813358772462}
   - component: {fileID: 6649068633832327828}
-  - component: {fileID: 704978523617238580}
   - component: {fileID: -2476455678058478599}
-  - component: {fileID: 3359949959688893961}
+  - component: {fileID: -4404360239133137300}
+  - component: {fileID: -8684658403633179875}
+  - component: {fileID: -712472341698502859}
   m_Layer: 6
   m_Name: Girlscout T Masuyama
   m_TagString: Untagged
@@ -57,22 +58,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!54 &704978523617238580
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138979135875254868}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!195 &-2476455678058478599
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -82,12 +67,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 138979135875254868}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -95,7 +80,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3359949959688893961
+--- !u!114 &-4404360239133137300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,11 +89,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 138979135875254868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d65ef7778d83fa4ebaa6033ca6eb6df, type: 3}
+  m_Script: {fileID: 11500000, guid: bad49a24a48d57a4b98b773bada3a177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   player: {fileID: 0}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  playerInAttackRange: 0
+  attackRange: 1.5
+  anim: {fileID: 0}
+--- !u!136 &-8684658403633179875
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138979135875254868}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 2.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &-712472341698502859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138979135875254868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016922cf79c76d743a120ef13d43baf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 250
+  currentHealth: 0
+  me: {fileID: 0}
+  damage: 50
 --- !u!1 &155842050639063311
 GameObject:
   m_ObjectHideFlags: 0

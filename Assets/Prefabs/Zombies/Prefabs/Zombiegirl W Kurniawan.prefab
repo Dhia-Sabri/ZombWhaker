@@ -1555,6 +1555,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6062748890350530442}
   - component: {fileID: 199030480853628400}
+  - component: {fileID: 6588487189278501326}
+  - component: {fileID: -3521247169381385909}
+  - component: {fileID: 1931235350}
+  - component: {fileID: 1931235349}
   m_Layer: 6
   m_Name: Zombiegirl W Kurniawan
   m_TagString: Untagged
@@ -1591,7 +1595,7 @@ Animator:
   m_GameObject: {fileID: 6874996975441081648}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 69d98314dbd4d6b459aa6e3759ad69cf, type: 3}
-  m_Controller: {fileID: 9100000, guid: 408b42ba184672b41985b0b3623883a3, type: 2}
+  m_Controller: {fileID: 9100000, guid: d751b1b206c388c44aecb8e33029cddf, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1601,6 +1605,78 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!195 &6588487189278501326
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874996975441081648}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.1
+  m_Speed: 1.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 1.25
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &-3521247169381385909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874996975441081648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad49a24a48d57a4b98b773bada3a177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  player: {fileID: 0}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  playerInAttackRange: 0
+  attackRange: 1.5
+  anim: {fileID: 0}
+--- !u!136 &1931235350
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874996975441081648}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 2.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1931235349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874996975441081648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016922cf79c76d743a120ef13d43baf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 300
+  currentHealth: 0
+  me: {fileID: 0}
+  damage: 30
 --- !u!1 &7023622929406634230
 GameObject:
   m_ObjectHideFlags: 0

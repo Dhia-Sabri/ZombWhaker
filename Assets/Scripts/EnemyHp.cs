@@ -6,34 +6,40 @@ public class EnemyHp : MonoBehaviour
 {
     public int MaxHealth = 500;
     public int currentHealth;
-    public Healthbar healthbar;
-    void Start()
+    public Transform me;
+    public int damage;
+    void Awake()
     {
         currentHealth = MaxHealth;
+        me = GetComponent<Transform>();
     }
 
-  
- void OnCollisionEnter(Collision other)
+    private void Update()
+    {
+        Death();
+    }
+
+
+    void OnTriggerEnter(Collider other)
     {
       if (other.gameObject.tag == "PlayerWeapon")
-      {
-         TakeDamage(30);
-         if (currentHealth <= 0)
-         {
-             Die(); 
-         }
-            }
-        }
+      { 
+         TakeDamage();
+      }
+    }
        
     
     
-    void TakeDamage(int damage)
+    void TakeDamage()
     {
         currentHealth -= damage;
-        healthbar.SetHealth(currentHealth);
-    }
-    void Die()
+    }   
+    
+    void Death()
     {
-
+        if (currentHealth <= 0)
+        {
+            Destroy(me.gameObject);
+        }
     }
 }

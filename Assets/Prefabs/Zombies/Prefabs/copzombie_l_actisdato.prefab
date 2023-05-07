@@ -2290,7 +2290,9 @@ GameObject:
   - component: {fileID: 7549277329964968872}
   - component: {fileID: 4477782473157472722}
   - component: {fileID: 6159388794664688376}
-  - component: {fileID: 6309538021586366442}
+  - component: {fileID: -7821695188642208770}
+  - component: {fileID: -5631400050250671173}
+  - component: {fileID: 6426284669015322493}
   m_Layer: 6
   m_Name: copzombie_l_actisdato
   m_TagString: Untagged
@@ -2347,12 +2349,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 7174158439986819346}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 1
+  m_Radius: 0.1
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1.25
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -2360,7 +2362,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6309538021586366442
+--- !u!114 &-7821695188642208770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2369,11 +2371,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 7174158439986819346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d65ef7778d83fa4ebaa6033ca6eb6df, type: 3}
+  m_Script: {fileID: 11500000, guid: bad49a24a48d57a4b98b773bada3a177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   player: {fileID: 0}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  playerInAttackRange: 0
+  attackRange: 1.5
+  anim: {fileID: 0}
+--- !u!136 &-5631400050250671173
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7174158439986819346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 2.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6426284669015322493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7174158439986819346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016922cf79c76d743a120ef13d43baf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 650
+  currentHealth: 0
+  me: {fileID: 0}
+  damage: 50
 --- !u!1 &7706203656496768099
 GameObject:
   m_ObjectHideFlags: 0
