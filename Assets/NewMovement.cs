@@ -16,6 +16,11 @@ public class NewMovement : MonoBehaviour
 
     public float TurnSmoothTime = 0.1f;
     float turnsmoothvelocity;
+
+    private void Awake()
+    {
+        Cursor.visible = false;
+    }
     // Update is called once per frame
     void Update()
     {

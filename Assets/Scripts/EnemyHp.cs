@@ -6,8 +6,7 @@ public class EnemyHp : MonoBehaviour
 {
     public int MaxHealth = 500;
     public int currentHealth;
-    public Transform me;
-    public int damage;
+    public Transform me;    
     void Awake()
     {
         currentHealth = MaxHealth;
@@ -24,13 +23,13 @@ public class EnemyHp : MonoBehaviour
     {
       if (other.gameObject.tag == "PlayerWeapon")
       { 
-         TakeDamage();
+         TakeDamage(30);
       }
     }
        
     
     
-    void TakeDamage()
+    void TakeDamage(int damage)
     {
         currentHealth -= damage;
     }   
